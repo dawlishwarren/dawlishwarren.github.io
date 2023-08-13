@@ -1,0 +1,132 @@
+body {
+	background-color: #d1d1d1;
+	overflow: hidden;
+}
+h1,
+p,
+a {
+	color: black;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+a,
+p {
+	z-index: 2;
+}
+.color_burn_wrapper {
+	margin-inline: auto;
+	position: relative;
+	display: flex;
+}
+h1 {
+	font-size: max(48px, min(5vw, 72px));
+	background: linear-gradient(
+		to right,
+		rgb(158, 158, 156) 7.45%,
+		rgb(92, 94, 94) 94.12%
+	);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	text-fill-color: transparent;
+	position: relative;
+	margin: 0;
+	font-weight: 700;
+	max-width: 16ch;
+	line-height: 1.1;
+	letter-spacing: -3px;
+	z-index: -2;
+	opacity: 0.7;
+}
+h1.color_burn {
+	position: absolute;
+	display: flex;
+	top: 0px;
+	left: 0px;
+	font-weight: 700;
+	max-width: 16ch;
+	line-height: 1.1;
+	letter-spacing: -3px;
+	mix-blend-mode: color-burn;
+	z-index: 1;
+	opacity: 1;
+}
+h1[data-overlay] {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 1;
+	opacity: 0.3;
+}
+a,
+p {
+	background: linear-gradient(
+		to right,
+		rgb(66, 66, 65) 7.45%,
+		rgb(92, 94, 94) 94.12%
+	);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	text-fill-color: transparent;
+}
+p {
+	font-size: max(30px, min(4vw, 58px));
+}
+a {
+	font-size: max(20px, min(3vw, 30px));
+}
+.links_wrapper {
+	display: flex;
+	gap: 2rem;
+}
+.links_wrapper a {
+	text-decoration: underline solid rgb(92, 94, 94);
+}
+.links_wrapper a:hover {
+	background: linear-gradient(
+		to right,
+		rgb(195, 66, 63) 50%,
+		rgb(195, 66, 63) 89%,
+		rgb(240, 93, 9) 94.12%
+	);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	text-fill-color: transparent;
+}
+
+.container {
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.blob {
+	width: 75vw;
+	height: 75vh;
+	position: absolute;
+	z-index: 1;
+	animation: myBlob 120s infinite alternate-reverse ease-in;
+}
+@keyframes myBlob {
+	0% {
+		top: 0%;
+		left: 0%;
+	}
+	50% {
+		top: 50%;
+		left: 50%;
+	}
+	75% {
+		top: -50%;
+		left: -50%;
+	}
+	100% {
+		top: 0%;
+		left: 0%;
+	}
+}
